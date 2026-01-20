@@ -1,0 +1,29 @@
+n_prompts: 4200
+target_final: 3600
+
+chosen:
+  max_tokens: 350
+  temperature: 0.7
+
+rejected:
+  max_tokens: 220
+  temperature: 0.7
+
+validation:
+  min_chars: 40
+  arabic_ratio_min: 0.70
+  english_ratio_min: 0.70
+  max_retries_for_chosen: 2
+
+paths:
+  out_dir: "data"
+  prompts_file: "prompts.jsonl"
+  chosen_file: "raw_chosen.jsonl"
+  rejected_file: "raw_rejected.jsonl"
+  final_file: "final_trl.jsonl"
+
+  judge:
+    enabled: true
+    every_n: 10        # check 1 out of every 10 accepted candidates
+    max_tokens: 30
+    temperature: 0.0
